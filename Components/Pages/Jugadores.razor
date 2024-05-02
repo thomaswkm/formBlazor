@@ -1,0 +1,49 @@
+@using Formulario.Service
+@using Formulario.Model
+
+<PageTitle>Listado de Jugadores</PageTitle>
+<h3>Listado de Jugadores</h3>
+
+@if (isLoading)
+{
+    <div class="spinner-border text-primary" role="status">
+        <span class="visually-hidden">Loading...</span>
+    </div>
+}
+else if (jugadores != null && jugadores.Any())
+{
+    <div class="row">
+        @foreach (var jugador in jugadores)
+        {
+            <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+                <div class="card">
+                    <img src="@jugador.UrlImagen" class="card-img-top" alt="@jugador.Nombre" style="width: 100px; height: 130px;">
+                    <div class="card-body">
+                        <h5 class="card-title">@jugador.Nombre</h5>
+                        <p class="card-text">Posición: @jugador.Posicion</p>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+}
+else
+{
+    <div class="alert alert-warning" role="alert">
+        No se encontraron jugadores.
+    </div>
+}
+
+@code {
+    List<Jugador> jugadores;
+    bool isLoading = true;
+
+    [Inject]
+    private JugadorService jugadorService { get; set; }
+
+    protected override async Task OnInitializedAsync()
+    {
+        jugadores = await jugadorService.ObtenerJugadores("https://www.transfermarkt.es/chile/kader/verein/3700/plus/0/galerie/0?saison_id=2023");
+        isLoading = false;
+    }
+}

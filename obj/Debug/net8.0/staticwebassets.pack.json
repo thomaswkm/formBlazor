@@ -1,0 +1,53 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\Users\\thoma\\RiderProjects\\Formulario\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\Formulario.bundle.scp.css",
+      "PackagePath": "staticwebassets\\Formulario.bundle.scp.css"
+    },
+    {
+      "Id": "C:\\Users\\thoma\\RiderProjects\\Formulario\\wwwroot\\app.css",
+      "PackagePath": "staticwebassets\\app.css"
+    },
+    {
+      "Id": "C:\\Users\\thoma\\RiderProjects\\Formulario\\wwwroot\\bootstrap\\bootstrap.min.css",
+      "PackagePath": "staticwebassets\\bootstrap\\bootstrap.min.css"
+    },
+    {
+      "Id": "C:\\Users\\thoma\\RiderProjects\\Formulario\\wwwroot\\bootstrap\\bootstrap.min.css.map",
+      "PackagePath": "staticwebassets\\bootstrap\\bootstrap.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\thoma\\RiderProjects\\Formulario\\wwwroot\\form.css",
+      "PackagePath": "staticwebassets\\form.css"
+    },
+    {
+      "Id": "C:\\Users\\thoma\\RiderProjects\\Formulario\\wwwroot\\icon.ico",
+      "PackagePath": "staticwebassets\\icon.ico"
+    },
+    {
+      "Id": "C:\\Users\\thoma\\RiderProjects\\Formulario\\wwwroot\\jugadores.css",
+      "PackagePath": "staticwebassets\\jugadores.css"
+    },
+    {
+      "Id": "C:\\Users\\thoma\\RiderProjects\\Formulario\\wwwroot\\resources\\cancha.jpg",
+      "PackagePath": "staticwebassets\\resources\\cancha.jpg"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.Formulario.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.build.Formulario.props",
+      "PackagePath": "build\\Formulario.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildMultiTargeting.Formulario.props",
+      "PackagePath": "buildMultiTargeting\\Formulario.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildTransitive.Formulario.props",
+      "PackagePath": "buildTransitive\\Formulario.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

@@ -1,0 +1,15 @@
+.card {
+    transition: transform 0.3s;
+    border: 1px solid rgba(0, 0, 0, 0.125);
+}
+
+.card:hover .card-body {
+    transform: translateY(-5px);
+}
+
+.spinner-border {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}

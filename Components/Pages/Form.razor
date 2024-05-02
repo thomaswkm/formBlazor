@@ -1,0 +1,158 @@
+@page "/formulario"
+@using Formulario.Service
+@using Formulario.Model
+
+<PageTitle>Formulario</PageTitle>
+
+<body class="fondo">
+<h3>Envia tu formación</h3>
+<link href="/form.css" rel="stylesheet" />
+
+@if (jugadores != null)
+{
+    <EditForm Model="formacion" method="post" OnSubmit="EnviarFormacion" FormName="formulario">
+        <p>
+            <label for="Jugador1">Jugador 1</label>
+            <InputSelect id="Jugador1" @bind-Value="formacion.Jugador1">
+                <option value="">Selecciona un jugador</option>
+                @foreach (var jugador in jugadores)
+                {
+                    <option value="@jugador.Nombre">@jugador.Nombre</option>
+                }
+            </InputSelect>
+        </p>
+        <p>
+            <label for="Jugador2">Jugador 2</label>
+            <InputSelect id="Jugador2" @bind-Value="formacion.Jugador2">
+                <option value="">Selecciona un jugador</option>
+                @foreach (var jugador in jugadores)
+                {
+                    <option value="@jugador.Nombre">@jugador.Nombre</option>
+                }
+            </InputSelect>
+        </p>
+        <p>
+            <label for="Jugador3">Jugador 3</label>
+            <InputSelect id="Jugador3" @bind-Value="formacion.Jugador3">
+                <option value="">Selecciona un jugador</option>
+                @foreach (var jugador in jugadores)
+                {
+                    <option value="@jugador.Nombre">@jugador.Nombre</option>
+                }
+            </InputSelect>
+        </p>
+        <p>
+            <label for="Jugador4">Jugador 4</label>
+            <InputSelect id="Jugador4" @bind-Value="formacion.Jugador4">
+                <option value="">Selecciona un jugador</option>
+                @foreach (var jugador in jugadores)
+                {
+                    <option value="@jugador.Nombre">@jugador.Nombre</option>
+                }
+            </InputSelect>
+        </p>
+        <p>
+            <label for="Jugador5">Jugador 5</label>
+            <InputSelect id="Jugador5" @bind-Value="formacion.Jugador5">
+                <option value="">Selecciona un jugador</option>
+                @foreach (var jugador in jugadores)
+                {
+                    <option value="@jugador.Nombre">@jugador.Nombre</option>
+                }
+            </InputSelect>
+        </p>
+        <p>
+            <label for="Jugador6">Jugador 6</label>
+            <InputSelect id="Jugador6" @bind-Value="formacion.Jugador6">
+                <option value="">Selecciona un jugador</option>
+                @foreach (var jugador in jugadores)
+                {
+                    <option value="@jugador.Nombre">@jugador.Nombre</option>
+                }
+            </InputSelect>
+        </p>
+        <p>
+            <label for="Jugador7">Jugador 7</label>
+            <InputSelect id="Jugador7" @bind-Value="formacion.Jugador7">
+                <option value="">Selecciona un jugador</option>
+                @foreach (var jugador in jugadores)
+                {
+                    <option value="@jugador.Nombre">@jugador.Nombre</option>
+                }
+            </InputSelect>
+        </p>
+        <p>
+            <label for="Jugador8">Jugador 8</label>
+            <InputSelect id="Jugador8" @bind-Value="formacion.Jugador8">
+                <option value="">Selecciona un jugador</option>
+                @foreach (var jugador in jugadores)
+                {
+                    <option value="@jugador.Nombre">@jugador.Nombre</option>
+                }
+            </InputSelect>
+        </p>
+        <p>
+            <label for="Jugador9">Jugador 9</label>
+            <InputSelect id="Jugador9" @bind-Value="formacion.Jugador9">
+                <option value="">Selecciona un jugador</option>
+                @foreach (var jugador in jugadores)
+                {
+                    <option value="@jugador.Nombre">@jugador.Nombre</option>
+                }
+            </InputSelect>
+        </p>
+        <p>
+            <label for="Jugador10">Jugador 10</label>
+            <InputSelect id="Jugador10" @bind-Value="formacion.Jugador10">
+                <option value="">Selecciona un jugador</option>
+                @foreach (var jugador in jugadores)
+                {
+                    <option value="@jugador.Nombre">@jugador.Nombre</option>
+                }
+            </InputSelect>
+        </p>
+        <p>
+            <label for="Jugador11">Jugador 11</label>
+            <InputSelect id="Jugador11" @bind-Value="formacion.Jugador11">
+                <option value="">Selecciona un jugador</option>
+                @foreach (var jugador in jugadores)
+                {
+                <option value="@jugador.Nombre">@jugador.Nombre</option>
+                }
+            </InputSelect>
+        </p>
+        
+        <button type="submit">Submit</button>
+    </EditForm>
+}
+else
+{
+<p>Cargando jugadores...</p>
+}
+</body>
+@code {
+
+
+List<Jugador> jugadores;
+
+[SupplyParameterFromForm]
+Formacion formacion { get; set; } = new Formacion();
+
+[Inject]
+private JugadorService jugadorService { get; set; }
+
+[Inject]
+private FormacionService formacionService { get; set; }
+
+private async Task EnviarFormacion()
+{
+    
+await formacionService.GuardarFormacion(formacion);
+Console.WriteLine("Formación enviada correctamente.");
+}
+
+protected override async Task OnInitializedAsync()
+{
+jugadores = await jugadorService.ObtenerJugadores("https://www.transfermarkt.es/chile/kader/verein/3700/plus/0/galerie/0?saison_id=2023");
+}
+}
